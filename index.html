@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARM - Transforming Organisations with Human-Centred Strategies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            padding: 40px 30px;
+            margin-bottom: 2px;
+        }
+
+        /* Header Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 30px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(0,139,139,0.2) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #008B8B;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        /* Section Headers */
+        .section-header {
+            background: linear-gradient(90deg, #008B8B, #20B2AA);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .content-title {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+        }
+
+        .content-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 4px solid #008B8B;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 3px solid #d4af37;
+            transition: transform 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .strategy-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #008B8B, #20B2AA);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #d4af37;
+            padding-left: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+        }
+
+        .contact-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #008B8B;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-card h3 {
+            color: #d4af37;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 8px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: #2c3e50;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .visual-element {
+            height: 120px;
+            background: linear-gradient(45deg, #008B8B, #20B2AA);
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .footer-note h4 {
+            color: #d4af37;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-note p {
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .contact-title {
+                font-size: 1.8rem;
+            }
+            
+            .section, .hero, .contact {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="logo">JARM</div>
+                <h1 class="hero-title">Transforming Organisations with Human-Centred Strategies</h1>
+                <p class="hero-subtitle">Innovative Approaches for Modern Transformation</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="section-header">
+            <h2 class="section-title">Overview of Presentation</h2>
+            <p class="section-subtitle">Setting the Foundation for Transformation</p>
+        </div>
+        <div class="section">
+            <div class="content-section">
+                <h3 class="content-title">Welcome to JARM</h3>
+                <p class="content-text">
+                    In today's rapidly evolving business landscape, organisations face unprecedented challenges that require innovative, human-centred solutions. JARM stands at the forefront of organisational transformation, bridging the gap between technology and human experience.
+                </p>
+                <p class="content-text">
+                    Our approach recognises that true transformation goes beyond implementing new systems or processes—it requires a fundamental shift in how organisations understand, engage with, and empower their people.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="content-title">Main Themes & Goals</h3>
+                <p class="content-text">
+                    <strong>Human-Centred Design:</strong> Placing people at the heart of every transformation initiative, ensuring that technology serves humanity rather than the other way around.
+                </p>
+                <p class="content-text">
+                    <strong>Innovative Strategies:</strong> Developing cutting-edge approaches that combine proven methodologies with emerging technologies to create sustainable change.
+                </p>
+                <p class="content-text">
+                    <strong>Organisational Empowerment:</strong> Building capabilities within organisations to adapt, thrive, and lead in an ever-changing environment.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-title">What to Expect</h3>
+                <p class="content-text">
+                    This presentation will take you through our comprehensive approach to transformation, showcasing real-world applications and the tangible benefits of human-centred strategies. You'll discover how JARM's innovative methods can revolutionise your organisation's capacity for growth and adaptation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Human-Centred Transformation -->
+        <div class="section-header">
+            <h2 class="section-title">Human-Centred Transformation</h2>
+            <p class="section-subtitle">Prioritising People in Organisational Change</p>
+        </div>
+        <div class="section">
+            <div class="content-section">
+                <h3 class="content-title">The Human Element</h3>
+                <p class="content-text">
+                    Traditional transformation approaches often focus primarily on technology, processes, and systems while treating people as an afterthought. JARM's human-centred approach fundamentally reverses this paradigm.
+                </p>
+                <p class="content-text">
+                    We recognise that every organisation is fundamentally a human system—a complex network of relationships, interactions, and shared experiences. By understanding and designing for human needs, motivations, and capabilities, we create transformations that are not only more effective but also more sustainable and meaningful.
+                </p>
+            </div>
+
+            <div class="visual-element">
+                Human-Centred Design in Action
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="content-title">Core Principles</h3>
+                <p class="content-text">
+                    <strong>Empathy First:</strong> Understanding the real experiences, challenges, and aspirations of all stakeholders before designing solutions.
+                </p>
+                <p class="content-text">
+                    <strong>Inclusive Design:</strong> Ensuring that transformation benefits everyone, regardless of their role, background, or technical expertise.
+                </p>
+                <p class="content-text">
+                    <strong>Continuous Learning:</strong> Building organisations that learn, adapt, and evolve based on human feedback and changing needs.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-title">The Importance of Human Experience</h3>
+                <p class="content-text">
+                    When people feel valued, understood, and empowered within their organisation, they become active contributors to transformation rather than passive recipients of change. This shift from compliance to engagement unlocks unprecedented levels of innovation, productivity, and resilience.
+                </p>
+                <p class="content-text">
+                    Research consistently shows that organisations with strong human-centred cultures outperform their competitors in virtually every meaningful metric—from employee satisfaction and retention to customer loyalty and financial performance.
+                </p>
+            </div>
+        </div>
+
+        <!-- Innovative Strategies -->
+        <div class="section-header">
+            <h2 class="section-title">Innovative Strategies</h2>
+            <p class="section-subtitle">JARM's Cutting-Edge Methodologies</p>
+        </div>
+        <div class="section">
+            <div class="content-section">
+                <h3 class="content-title">Our Strategic Approach</h3>
+                <p class="content-text">
+                    JARM has developed a comprehensive suite of innovative strategies that address the full spectrum of organisational transformation challenges. Our methods combine deep human insights with advanced technological capabilities to create solutions that are both sophisticated and accessible.
+                </p>
+            </div>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4 class="strategy-title">Experience Mapping</h4>
+                    <p class="content-text">
+                        We create detailed maps of human experiences across all touchpoints in your organisation, identifying pain points and opportunities for meaningful improvement.
+                    </p>
+                </div>
+                <div class="strategy-card">
+                    <h4 class="strategy-title">Adaptive Framework Design</h4>
+                    <p class="content-text">
+                        Our frameworks are designed to evolve with your organisation, ensuring that transformation remains relevant and effective over time.
+                    </p>
+                </div>
+                <div class="strategy-card">
+                    <h4 class="strategy-title">Collaborative Innovation</h4>
+                    <p class="content-text">
+                        We facilitate cross-functional collaboration that harnesses the collective intelligence of your entire organisation.
+                    </p>
+                </div>
+                <div class="strategy-card">
+                    <h4 class="strategy-title">Digital-Human Integration</h4>
+                    <p class="content-text">
+                        We seamlessly blend digital capabilities with human strengths, creating hybrid solutions that amplify human potential.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-title">Implementation Success Stories</h3>
+                <p class="content-text">
+                    Our strategies have been successfully implemented across diverse industries, from healthcare systems managing complex patient journeys to financial institutions reimagining customer relationships. In each case, our human-centred approach has delivered measurable improvements in efficiency, satisfaction, and innovation capacity.
+                </p>
+            </div>
+        </div>
+
+        <!-- Empowering Organisations -->
+        <div class="section-header">
+            <h2 class="section-title">Empowering Organisations</h2>
+            <p class="section-subtitle">Building Adaptive Capacity for the Future</p>
+        </div>
+        <div class="section">
+            <div class="content-section">
+                <h3 class="content-title">Transformative Impact</h3>
+                <p class="content-text">
+                    JARM's methods don't just solve immediate problems—they build lasting organisational capabilities that enable continuous adaptation and growth. We focus on creating systems, cultures, and competencies that make organisations more resilient, innovative, and responsive to changing conditions.
+                </p>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    JARM's human-centred approach transformed not just our processes, but our entire organisational culture. We've seen a 40% increase in employee engagement and a 60% improvement in customer satisfaction since implementing their strategies.
+                </p>
+                <p class="testimonial-author">— Chief Executive Officer, Global Healthcare Network</p>
+            </div>
+
+            <div class="content-section">
+                <h3 class="content-title">Key Outcomes</h3>
+                <p class="content-text">
+                    <strong>Enhanced Agility:</strong> Organisations become more responsive to market changes and customer needs, with improved decision-making processes and faster adaptation cycles.
+                </p>
+                <p class="content-text">
+                    <strong>Increased Innovation:</strong> By creating environments where people feel safe to experiment and contribute ideas, we unlock your organisation's full creative potential.
+                </p>
+                <p class="content-text">
+                    <strong>Sustainable Growth:</strong> Our approaches create foundations for long-term success, ensuring that improvements are maintained and expanded over time.
+                </p>
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="content-title">Measurable Results</h3>
+                <p class="content-text">
+                    Our clients typically experience significant improvements within the first six months of implementation, with continued growth and development over years. We work closely with organisations to establish clear metrics and continuously monitor progress against transformation goals.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact">
+            <h2 class="contact-title">Ready to Transform Your Organisation?</h2>
+            <p class="content-text" style="color: #fff; font-size: 1.1rem; margin-bottom: 30px;">
+                Connect with JARM today to discover how our human-centred strategies can unlock your organisation's full potential.
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Get in Touch</h3>
+                    <p>Email: jarmconsulting@outlook.com</p>
+                    <p>Phone: +44 7432159645</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Connect with Us</h3>
+                    <p>LinkedIn: www.linkedin.com/in/maria-rasine-b80401228</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Schedule a Consultation</h3>
+                    <p>Book directly: calendly.com/jarmconsulting</p>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="window.print()">
+                Download PDF Brochure
+            </button>
+
+            <div class="footer-note">
+                <h4>Ready to Get Started?</h4>
+                <p>
+                    Our transformation experts are ready to discuss your specific challenges and goals. Visit calendly.com/jarmconsulting to book a consultation and begin your journey toward more effective, human-centred organisational change.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
